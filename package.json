@@ -26,13 +26,16 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo \"this should fail\" && exit 1"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
+      "prettier --write",
       "git add"
     ]
+  },
+  "dependencies": {
+    "prettier": "^2.0.5"
   }
 }
